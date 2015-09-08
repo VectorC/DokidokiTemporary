@@ -1,0 +1,111 @@
+canvas{
+position:absolute;
+top:130px;
+left:10px;
+}
+
+.note{
+  position: absolute;
+  left: 15px;
+  top: 130px;
+}
+
+.score{
+  position: absolute;
+  top: 110px;
+  left: 10px;
+}
+
+.label-success{
+  width: 80px;
+  position: absolute;
+  top:510px;
+}
+
+#k{
+  border: 1px solid #5cb85c;
+  border-radius: 3px;
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  top: 510px;
+  left: 80px;
+  text-align: left;
+}
+
+.label-danger{
+  width: 80px;
+  position: absolute;
+  top:510px;
+  left: 195px;
+}
+
+#m{
+  border: 1px solid #d9534f;
+  border-radius: 3px;
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  top: 510px;
+  left: 275px;
+  text-align: left;
+}
+
+.label-info{
+  width: 80px;
+  position: absolute;
+  top:510px;
+  left: 395px;
+}
+
+#a{
+  border: 1px solid #5bc0de;
+  border-radius: 3px;
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  top: 510px;
+  left: 475px;
+  text-align: left;
+}
+
+.note-top{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.alert-danger{
+  width: 640px;
+}
+
+.alert-info{
+  position: absolute;
+  top: 60px;
+  width: 640px;
+}
+
+.tips{
+  width: 800px;
+}
+
+#bottom{
+  position: absolute;
+  top: 748px;
+}
+
+.fb-like{
+  position: absolute;
+  top: 700px;
+}
+
+.unityplayer{
+  position: absolute;
+  left: 680px;
+  top: 10px;
+}
+
+.unityplayer .content{
+  position: absolute;
+  top: 140px;
+}
