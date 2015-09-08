@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <!-- Defining the charset in HTML4 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- In HTML5 -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+  <script type="text/javascript">
+		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+    </script>
+    <script type="text/javascript">
+
+			var config = {
+				width: 800, 
+				height: 600,
+				params: { enableDebugging:"0" }
+				
+			};
+			config.params["disableContextMenu"] = true;
+			var u = new UnityObject2(config);
+			
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "http://dokidoki.us/cuby.unity3d");
+			});
+
+		</script>
+    
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <title>DokiDoki</title>
+	</head>
+	
+	<body>
+    <div class="container">
+      
+    <div class="note-top">
+      <div class="alert alert-danger">
+        <span class="glyphicon glyphicon-bell"></span>
+        For best experience, please make sure your viewport size is larger than 1495x825.
+      </div>
+      <div class="alert alert-info">
+        <span class="glyphicon glyphicon-bell"></span>
+        Currently don't have support for mobile browser yet.
+      </div>
+    </div>
+      
+    <div class="note">
+      <h1>Under Construction</h2>
+      <h2>正在建設中</h2>
+      <h3>工事中</h3>
+      <h4>공사중</h4>
+      <h5>en cours de construction</h5>
+      <h6>Aliquam erat volutpat</h6>
+      <h7>В стадии строительства</h7>
+      <h6>Translation powered by Google</h6>
+    </div>
+    
+    <canvas height="480" id="canvas" style="border: 1px solid #777;" width="640"></canvas>
+    <script src="NewClickBounce.js" type="text/javascript"></script>
+    
+    <div class="score">
+    <h4><span class="label label-success">Kill</span></h4>
+    <div class="container" id="k">
+      <p id="kill"></p>
+    </div>
+
+    <h4><span class="label label-danger">Miss</span></h4>
+    <div class="container" id="m">
+      <p id="miss"></p>
+    </div>
+    
+    <h4><span class="label label-info">Accuracy</span></h4>
+    <div class="container" id="a">
+      <p id="acc"></p>
+    </div>
+    </div>
+      
+    <div class="fb-like" data-href="http://dokidoki.us/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+      
+    <div class="unityplayer">
+    
+    <div class="alert alert-warning tips">
+      <b>How to Play:</b></br>
+      Left click to create and Right click to delete.</br>
+      Hold down middle mouse wheel to pan.</br>
+      Mouse wheel to zoom.</br>
+      Hold down <kbd>shift</kbd> and middle mouse wheel to orb.
+    </div>
+		
+  <div class="content">
+			<div id="unityPlayer">
+				<div class="missing">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+						<img alt="Unity Web Player. Install now!" src="http://dokidoki.us/capture.jpg"/>
+					</a>
+				</div>
+			</div>
+		</div>
+  
+  <div class="alert alert-warning tips" id="bottom">
+    <b>Note:</b></br>
+    If you would like to play offline on high resolution, click
+    <button type="button" class="btn btn-default">Here</button>
+    to download a Windows copy (.exe file)</br>
+    Save and load function will be in place for the next update
+  </div>
+    </div>
+</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
